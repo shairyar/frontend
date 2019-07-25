@@ -1,0 +1,22 @@
+<div class="job-new-list">
+  <div class="vc-thumb">
+    <img class="img-fluid rounded-circle" src="http://codeminifier.com/workio-job-board-template/assets/img/adwords.png"
+      alt="c2.jpg">
+  </div>
+  <div class="vc-content">
+    <h5 class="title"><a href="job-detail.html">{{position.title}}</a><span class="j-full-time">{{position.work_type | removeUnderscore}}</span></h5>
+    <p>{{position.company_name}}</p>
+    <ul class="vc-info-list">
+      <li class="list-inline-item">
+        <h5>Expires on</h5>{{position.expires_at | date}}
+      </li>
+      <li class="list-inline-item" *ngIf="position.skills.length > 0">
+        <h5>Skills</h5>
+        <div class="skills">
+          <span *ngFor="let skill of position.skills">{{skill.name}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <a class="btn btn-outline-info bn-det" href="#">Apply Now<i class="ti-arrow-right ml-1"></i></a>
+</div>
